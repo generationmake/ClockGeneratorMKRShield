@@ -707,7 +707,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 2200 4200 4600
 NoConn ~ 950  6050
-NoConn ~ 950  5950
 NoConn ~ 950  5850
 NoConn ~ 950  5750
 NoConn ~ 950  5650
@@ -726,8 +725,6 @@ NoConn ~ 2150 5950
 NoConn ~ 2900 5850
 NoConn ~ 2900 5750
 NoConn ~ 2900 5650
-NoConn ~ 2900 5350
-NoConn ~ 2900 5250
 NoConn ~ 2900 5150
 $Comp
 L devices:Crystal_SMD_4Pad Y1
@@ -872,4 +869,74 @@ Text Notes 9450 3800 0    50   ~ 0
 chebyshev low pass filter\ncutoff frequency: 75 MHz\npassband ripple: 1.0 dB\nimpedance: 50 Ohm
 Text Notes 8200 4400 0    50   ~ 0
 filter calculation at:\nhttps://leleivre.com/rf_chebyshev_LPF.html\nhttp://www.calculatoredge.com/electronics/ch%20pi%20low%20pass.htm
+$Comp
+L mechanical-connectors:CONN_01X04 CN4
+U 1 1 6028D343
+P 3150 7100
+F 0 "CN4" H 3228 7141 50  0000 L CNN
+F 1 "SM04B-SRSS-TB" H 3228 7050 50  0000 L CNN
+F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 3228 7004 50  0001 L CNN
+F 3 "" H 3150 7100 50  0000 C CNN
+	1    3150 7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power-supply:GND #PWR016
+U 1 1 6028D857
+P 2850 7350
+F 0 "#PWR016" H 2850 7100 50  0001 C CNN
+F 1 "GND" H 2855 7177 50  0000 C CNN
+F 2 "" H 2850 7350 50  0000 C CNN
+F 3 "" H 2850 7350 50  0000 C CNN
+	1    2850 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power-supply:+3V3 #PWR013
+U 1 1 6028E376
+P 2750 6850
+F 0 "#PWR013" H 2750 6700 50  0001 C CNN
+F 1 "+3V3" H 2765 7023 50  0000 C CNN
+F 2 "" H 2750 6850 50  0000 C CNN
+F 3 "" H 2750 6850 50  0000 C CNN
+	1    2750 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 7150 2950 7150
+Wire Wire Line
+	2050 7250 2950 7250
+Wire Wire Line
+	2950 6950 2850 6950
+Wire Wire Line
+	2850 6950 2850 7350
+Wire Wire Line
+	2950 7050 2750 7050
+Wire Wire Line
+	2750 7050 2750 6850
+Text Label 2150 7150 0    50   ~ 0
+SERIAL_TX
+Text Label 2150 7250 0    50   ~ 0
+SERIAL_RX
+$Comp
+L mechanical-connectors:TEST_1P W2
+U 1 1 6029D1AF
+P 3100 6550
+F 0 "W2" V 3054 6738 50  0000 L CNN
+F 1 "TEST_1P" V 3145 6738 50  0000 L CNN
+F 2 "wire_pads:SolderWirePad_single_0-8mmDrill" H 3300 6550 50  0001 C CNN
+F 3 "" H 3300 6550 50  0000 C CNN
+	1    3100 6550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2250 6550 3100 6550
+Text Label 2450 6550 0    50   ~ 0
+PPS_INT
+Wire Wire Line
+	550  5950 950  5950
+Text Label 600  5950 0    50   ~ 0
+PPS_INT
+Text Notes 3750 7000 0    50   ~ 0
+for GPS
 $EndSCHEMATC
